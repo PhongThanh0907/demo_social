@@ -1,12 +1,14 @@
 import React from "react";
 import { Search, Mail, Bell } from "lucide-react";
 import Image from "next/image";
+import { LogoIcon } from "@/icons/Logo";
 
 const Header = () => {
   return (
     <header className="bg-white py-3 border-b border-gray-100 shadow">
       <div className="width-screen flex-between">
-        <div>
+        <div className="flex items-center gap-3">
+          <LogoIcon />
           <div className="relative h-8">
             <Search className="text-gray-400 text-sm absolute top-1/2 left-2 transform -translate-y-1/2" />
             <input

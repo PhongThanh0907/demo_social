@@ -101,19 +101,22 @@ export default function Home() {
             </div>
 
             <div className="flex gap-2 items-center">
-              <div className="flex items-center gap-2 border py-2 px-3 rounded-lg bg-emerald-600 text-white font-semibold">
+              <div className="flex items-center gap-2 border py-1.5 px-3 rounded-lg bg-emerald-600 text-white font-semibold">
                 <span>Developer Discussion</span>
                 <Arrow fill="#6d6a6a" />
               </div>
-              <div className="flex items-center gap-2 border py-2 px-3 rounded-lg bg-transparent text-gray-500 border-gray-400 font-semibold">
+              <div className="flex items-center gap-2 border py-1.5 px-3 rounded-lg bg-transparent text-gray-500 border-gray-400 font-semibold">
                 <span>Subcategories</span>
                 <Arrow fill="#6d6a6a" />
               </div>
-              <div className="flex items-center gap-2 border py-2 px-3 rounded-lg bg-transparent text-gray-500 border-gray-400 font-semibold">
+              <div className="flex items-center gap-2 border py-1.5 px-3 rounded-lg bg-transparent text-gray-500 border-gray-400 font-semibold">
                 <span>Any status</span>
                 <Arrow fill="#6d6a6a" />
               </div>
-              <div className="pl-2 font-medium">Latest top</div>
+              <div className="pl-2 font-medium">Latest</div>
+              <div className="bg-blue-100 border-b-[3px] rounded-t border-blue-500 py-[5px] px-4 text-blue-500 font-semibold ml-2">
+                <span className="relative top-[1px]">Top</span>
+              </div>
             </div>
 
             <div className="flex gap-2 items-center">
