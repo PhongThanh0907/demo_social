@@ -1,14 +1,22 @@
+import { cn } from "@/libs/utils";
 import { IconType } from "@/types/iconType";
 import React from "react";
 
-export const LogoIcon: React.FC<IconType> = ({ width, height, ...props }) => (
+export const LogoIcon: React.FC<IconType> = ({
+  onClick,
+  height,
+  width,
+  className,
+  //   fill,
+}) => (
   <svg
-    fill="none"
-    height={36 || height}
+    onClick={onClick}
+    className={cn("cursor-pointer", className)}
+    width={width || 36}
+    height={height || 37}
     viewBox="0 0 39 40"
-    width={37 || width}
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    {...props}
   >
     <g clip-path="url(#clip0_1293_750)">
       <path
