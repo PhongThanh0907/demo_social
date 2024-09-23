@@ -41,12 +41,12 @@ export default function Home() {
     {
       title: "Scroll",
       sub: "@Scroll_ZKP",
-      img: "/img3.png",
+      img: "/img4.jpg",
     },
     {
       title: "X Layer",
       sub: "@XLayerOfficial",
-      img: "/img3.png",
+      img: "/img5.jpg",
     },
   ];
 
@@ -171,8 +171,8 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="border rounded-full px-3 py-1 border-gray-600">
-                      <span className="font-semibold">Follow</span>
+                    <div className="border rounded-full px-2 border-gray-600">
+                      <span className="font-semibold text-sm">Follow</span>
                     </div>
                   </div>
                 ))}
@@ -201,8 +201,8 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex gap-2 items-center">
-                      <div className="border rounded-full px-3 py-1 border-gray-600">
-                        <span className="font-semibold">Follow</span>
+                      <div className="border rounded-full px-2 border-gray-600">
+                        <span className="font-semibold text-sm">Follow</span>
                       </div>
                       <X size={16} color="gray" />
                     </div>
