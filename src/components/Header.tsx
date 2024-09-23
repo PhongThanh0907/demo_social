@@ -18,8 +18,8 @@ const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Mail className="text-gray-400 h-6 w-6" />
-          <Bell className="text-gray-400 h-6 w-6" />
+          <Mail className="text-black h-6 w-6" />
+          <Bell className="text-black h-6 w-6" />
           <Image
             className="rounded-full shadow-lg"
             src="/logo.jpg"

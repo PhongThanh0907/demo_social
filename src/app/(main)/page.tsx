@@ -180,10 +180,13 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+              <div className="text-gray-600 font-semibold text-sm pt-2">
+                Show more
+              </div>
             </div>
 
             <div className="border border-gray-100 shadow rounded-lg bg-white w-full space-y-4 p-6 gap-2">
-              <span className="text-lg font-semibold">Why to Follow</span>
+              <span className="text-lg font-semibold">Who to Follow</span>
 
               <div className="space-y-4">
                 {data3.map((item, index) => (
