@@ -5,7 +5,7 @@ import { LogoIcon } from "@/icons/Logo";
 
 const Header = () => {
   return (
-    <header className="bg-white py-3 border-b border-gray-100 shadow">
+    <header className="bg-white py-3 border-b border-gray-100 shadow fixed top-0 inset-x-0 z-50">
       <div className="width-screen flex-between">
         <div className="flex items-center gap-3">
           <LogoIcon />

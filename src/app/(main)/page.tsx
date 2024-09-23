@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-6">
       <Header />
-      <div className="bg-gray-50">
+      <div className="bg-gray-50 pt-[88px]">
         <div className="grid grid-cols-12 gap-6 width-screen">
           <div className="col-span-7 flex flex-col gap-6">
             <div className=" border border-gray-100 shadow rounded-lg bg-white w-full h-20 flex items-center p-4 gap-2">
