@@ -133,7 +133,7 @@ export default function Home() {
           <div className="col-span-5 flex flex-col gap-6">
             <div className="border border-gray-100 shadow rounded-lg bg-white w-full flex items-center p-6 gap-2">
               <div>
-                <span className="text-lg font-semibold">
+                <span className="text-lg font-semibold ">
                   Setup your Hey profile
                 </span>
 
