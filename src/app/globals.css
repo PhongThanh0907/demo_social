@@ -21,7 +21,7 @@ body {
   }
 
   .width-screen {
-    @apply lg:max-w-[1400px] mx-auto
+    @apply lg:max-w-[1280px] mx-auto
   }
 
   .flex-center-row {
