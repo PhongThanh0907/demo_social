@@ -1,8 +1,14 @@
 import React from "react";
 import { Search, Mail, Bell } from "lucide-react";
 import Image from "next/image";
+import { useAccount } from "wagmi";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
 
 const Header = () => {
+  const { open } = useWeb3Modal();
+
+  const { address } = useAccount();
+
   return (
     <header className="bg-white py-3 border-b border-gray-100 shadow fixed top-0 inset-x-0 z-50">
       <div className="width-screen flex-between">
@@ -27,6 +33,13 @@ const Header = () => {
             height={32}
             alt="logo"
           />
+
+          {!address && (
+            <button onClick={() => open()} className="mr-4">
+              Connect Wallet
+              {/* <ChevronRight className="h-4 w-4" /> */}
+            </button>
+          )}
         </div>
       </div>
     </header>
