@@ -3,6 +3,8 @@ import { Search, Mail, Bell } from "lucide-react";
 import Image from "next/image";
 import { useAccount } from "wagmi";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
+import { disconnect } from "@wagmi/core";
+import { wagmiConfig } from "@/providers/wagmiConfig";
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -26,17 +28,31 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <Mail className="text-black h-6 w-6" />
           <Bell className="text-black h-6 w-6" />
-          <Image
-            className="rounded-full shadow-lg"
-            src="/logo.jpg"
-            width={32}
-            height={32}
-            alt="logo"
-          />
+          {address && (
+            <Image
+              className="rounded-full shadow-lg"
+              src="/logo.jpg"
+              width={32}
+              height={32}
+              alt="logo"
+            />
+          )}
 
           {!address && (
-            <button onClick={() => open()} className="mr-4">
+            <button
+              onClick={() => open()}
+              className="bg-[#00cfff] text-white px-4 py-2 rounded-xl"
+            >
               Connect Wallet
+              {/* <ChevronRight className="h-4 w-4" /> */}
+            </button>
+          )}
+          {address && (
+            <button
+              onClick={() => disconnect(wagmiConfig)}
+              className="bg-[#00cfff] text-white px-4 py-2 rounded-xl"
+            >
+              Disconnect
               {/* <ChevronRight className="h-4 w-4" /> */}
             </button>
           )}
