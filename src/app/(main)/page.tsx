@@ -5,7 +5,7 @@ import Arrow from "@/icons/Arrow";
 import { LensProvider } from "@/providers/lens-provider";
 import { Web3ModalProvider } from "@/providers/web3modal-provider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Check, X } from "lucide-react";
+import { X } from "lucide-react";
 import Image from "next/image";
 
 const queryClient = new QueryClient();
@@ -13,19 +13,19 @@ const queryClient = new QueryClient();
 export default function Home() {
   const data1 = [
     {
-      title: "Set profile name",
+      title: "🔹 Respect and Professionalism",
     },
     {
-      title: "Set profile bio",
+      title: "🔹 Stay On-Topic",
     },
     {
-      title: "Set your avatar",
+      title: "🔹 Constructive Feedback",
     },
     {
-      title: "Set your email address",
+      title: "🔹 No Spam or Promotions",
     },
     {
-      title: "Select profile interests",
+      title: "🔹 Share Knowledge",
     },
   ];
 
@@ -95,9 +95,6 @@ export default function Home() {
               <div className="grid grid-cols-12 gap-6 width-screen">
                 <div className="col-span-7 flex flex-col gap-6">
                   <div className=" border border-gray-100 shadow rounded-lg bg-white w-full h-20 flex items-center p-4 gap-2">
-                    {/* <div className="w-10 h-10 rounded-full bg-blue-500 text-black flex-center-row font-semibold border border-gray-400">
-                A
-              </div> */}
                     <Image
                       className="rounded-full shadow-lg"
                       src="/logo.jpg"
@@ -144,21 +141,21 @@ export default function Home() {
                   <div className="border border-gray-100 shadow rounded-lg bg-white w-full flex items-center p-6 gap-2">
                     <div>
                       <span className="text-lg font-semibold ">
-                        Setup your Hey profile
+                        Welcome to MOREPad Dev Forum!
                       </span>
 
                       <div className="space-y-2 py-3">
                         {data1.map((item, index) => (
                           <div key={index} className="flex gap-2 items-center">
-                            <div className="h-5 w-5 bg-black rounded-full flex-center-row">
+                            {/* <div className="h-5 w-5 bg-black rounded-full flex-center-row">
                               <Check color="white" size={12} />
-                            </div>
+                            </div> */}
                             <span className="text-gray-500">{item.title}</span>
                           </div>
                         ))}
                       </div>
 
-                      <div className="font-semibold">Update profile now</div>
+                      {/* <div className="font-semibold">Update profile now</div> */}
                     </div>
                   </div>
 
