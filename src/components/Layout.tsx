@@ -256,13 +256,7 @@ const Layout = () => {
                         @morepad404 - 15m
                       </span>
                     </p>
-                    <Image
-                      className="rounded-lg"
-                      src="/post1.jpg"
-                      alt="post"
-                      height={400}
-                      width={500}
-                    />
+
                     <p>🚀 MOREPad Officially Deployed on Bitlayer! 🚀</p>
                     <p>
                       If any builders want to create their products on this
@@ -270,6 +264,13 @@ const Layout = () => {
                       questions here!
                     </p>
                     <p>Keep building! 💪✨</p>
+                    <Image
+                      className="rounded-lg"
+                      src="/post1.jpg"
+                      alt="post"
+                      height={400}
+                      width={500}
+                    />
 
                     <div className="flex items-center gap-8 pt-5">
                       <div>
