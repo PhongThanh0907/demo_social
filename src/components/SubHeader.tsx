@@ -1,46 +1,19 @@
 import Image from "next/image";
 import React from "react";
-import { useAccount } from "wagmi";
 
 const SubHeader = () => {
-  const { address } = useAccount();
-
   return (
-    <div
-      className={`border border-gray-100 shadow rounded-lg bg-white w-full ${address ? "h-20" : "h-28"} flex items-center p-4 gap-2"`}
-    >
-      {address ? (
-        <>
-          <Image
-            className="rounded-full shadow-lg"
-            src="/logo.jpg"
-            width={50}
-            height={50}
-            alt="logo"
-          />
-          <span className="text-lg text-gray-500 pl-1">What&apos;s news</span>
-        </>
-      ) : (
-        <>
-          <div className="w-[50px]">
-            <Image
-              className="rounded-full shadow-lg"
-              src="/1212.jpg"
-              width={50}
-              height={50}
-              alt="logo"
-            />
-          </div>
-
-          <div className="pl-3 flex flex-col gap-2">
-            <span>Welcome to MOREPad Dev Forum!</span>
-            <span>
-              Welcome to MOREPad Dev Forum! Share your questions and insights
-              about building with MOREPad.
-            </span>
-          </div>
-        </>
-      )}
+    <div className="mt-16 bg-white  shadow py-20">
+      <div className="width-screen flex items-center gap-8">
+        <Image src="/1212.jpg" alt="logo" height={160} width={160} />
+        <div className="space-y-6">
+          <p className="text-3xl">Welcome to MOREPad Dev Forum!</p>
+          <p className="text-3xl">
+            Share your questions and insights
+            <br /> about building with MOREPad.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

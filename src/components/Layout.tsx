@@ -4,9 +4,12 @@ import Tip from "@/icons/Tip";
 import { ArrowRightLeft, Heart, MessageSquare, X } from "lucide-react";
 import Image from "next/image";
 import Header from "./Header";
+import { useAccount } from "wagmi";
 import SubHeader from "./SubHeader";
 
 const Layout = () => {
+  const { address } = useAccount();
+
   const data1 = [
     {
       title: "🔹 Respect and Professionalism",
@@ -83,10 +86,28 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <div className="bg-gray-50 pt-[88px]">
+      {!address && <SubHeader />}
+      <div className={`bg-gray-50 ${address && "pt-[88px]"}`}>
         <div className="grid grid-cols-12 gap-6 width-screen">
           <div className="col-span-7 flex flex-col gap-6">
-            <SubHeader />
+            {address && (
+              <div
+                className={`border border-gray-100 shadow rounded-lg bg-white w-full h-20 flex items-center p-4 gap-2"`}
+              >
+                <>
+                  <Image
+                    className="rounded-full shadow-lg"
+                    src="/logo.jpg"
+                    width={50}
+                    height={50}
+                    alt="logo"
+                  />
+                  <span className="text-lg text-gray-500 pl-1">
+                    What&apos;s news
+                  </span>
+                </>
+              </div>
+            )}
 
             <div className="flex gap-2 items-center">
               <div className="flex items-center gap-2 border py-1.5 px-3 rounded-lg bg-emerald-600 text-white font-semibold">
@@ -130,7 +151,7 @@ const Layout = () => {
                     />
                   </div>
 
-                  <div className="flex-1 space-y-3 flex-1">
+                  <div className="flex-1 space-y-3">
                     <p className="text-black pb-1.5">
                       Deivid
                       <span className="text-gray-600 text-sm pl-1">

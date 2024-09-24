@@ -4,7 +4,7 @@ import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 
 import { WagmiProvider } from "wagmi";
-import { linea } from "wagmi/chains";
+import { linea, polygon } from "wagmi/chains";
 
 import { linea as LineaChain } from "viem/chains";
 
@@ -19,7 +19,7 @@ const metadata = {
 };
 
 const config = defaultWagmiConfig({
-  chains: [linea] as const,
+  chains: [linea, polygon] as const,
   projectId,
   metadata,
   enableWalletConnect: true,
