@@ -6,7 +6,9 @@ const SubHeader = () => {
   const { address } = useAccount();
 
   return (
-    <div className=" border border-gray-100 shadow rounded-lg bg-white w-full h-20 flex items-center p-4 gap-2">
+    <div
+      className={`border border-gray-100 shadow rounded-lg bg-white w-full ${address ? "h-20" : "h-28"} flex items-center p-4 gap-2"`}
+    >
       {address ? (
         <>
           <Image
@@ -19,7 +21,25 @@ const SubHeader = () => {
           <span className="text-lg text-gray-500 pl-1">What&apos;s news</span>
         </>
       ) : (
-        <></>
+        <>
+          <div className="w-[50px]">
+            <Image
+              className="rounded-full shadow-lg"
+              src="/1212.jpg"
+              width={50}
+              height={50}
+              alt="logo"
+            />
+          </div>
+
+          <div className="pl-3 flex flex-col gap-2">
+            <span>Welcome to MOREPad Dev Forum!</span>
+            <span>
+              Welcome to MOREPad Dev Forum! Share your questions and insights
+              about building with MOREPad.
+            </span>
+          </div>
+        </>
       )}
     </div>
   );

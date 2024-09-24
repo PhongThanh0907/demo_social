@@ -130,7 +130,7 @@ const Layout = () => {
                     />
                   </div>
 
-                  <div className="flex-1 space-y-3">
+                  <div className="flex-1 space-y-3 flex-1">
                     <p className="text-black pb-1.5">
                       Deivid
                       <span className="text-gray-600 text-sm pl-1">
@@ -228,7 +228,7 @@ const Layout = () => {
                       className="rounded-full shadow-lg"
                     />
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex-1">
                     <p className="text-black pb-1.5">
                       MOREPad
                       <span className="text-gray-600 text-sm pl-1">
@@ -286,10 +286,10 @@ const Layout = () => {
                       alt="user"
                       width={50}
                       height={50}
-                      className="rounded-full shadow-lg"
+                      className="rounded-full shadow-lg object-cover"
                     />
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex-1">
                     <p className="text-black pb-1.5">
                       Amjad
                       <span className="text-gray-600 text-sm pl-1">
