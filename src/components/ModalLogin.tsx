@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -30,35 +31,17 @@ const ModalLogin = () => {
 
   console.log(data);
 
-  // const resolve = async () => {
-  //   const result = await execute({ handle: "lens/wagmi", address: address });
-
-  //   console.log(result);
-
-  //   if (result.isSuccess()) {
-  //     setIsOpenSuccess(true);
-  //     setIsOpen(false);
-
-  //     return;
-  //   }
-
-  //   if (result.isFailure()) {
-  //     setIsOpenFail(true);
-  //     setIsOpen(false);
-
-  //     return;
-  //   }
-  // };
-
   useEffect(() => {
     if (address && data?.length === 0) {
+      setIsOpenSignUp(true);
+    } else if (address && data && data?.length > 0) {
       setIsOpenLogin(true);
     }
   }, [address, data]);
 
   return (
     <>
-      <Dialog open={isOpenLogin} onOpenChange={setIsOpenLogin}>
+      <Dialog open={isOpenSignUp} onOpenChange={setIsOpenSignUp}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="border-b pb-3">
@@ -84,8 +67,8 @@ const ModalLogin = () => {
                     <Button
                       disabled={loading}
                       onClick={() => {
-                        setIsOpenSignUp(true);
-                        setIsOpenLogin(false);
+                        setIsOpenSignUp(false);
+                        setIsOpenSign(true);
                       }}
                       className="rounded-full"
                     >
@@ -104,7 +87,7 @@ const ModalLogin = () => {
         </DialogContent>
       </Dialog>
 
-      <Dialog open={isOpenSignUp} onOpenChange={setIsOpenSignUp}>
+      <Dialog open={isOpenSign} onOpenChange={setIsOpenSign}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="border-b pb-3">
@@ -152,7 +135,7 @@ const ModalLogin = () => {
         </DialogContent>
       </Dialog>
 
-      <Dialog open={isOpenSign} onOpenChange={setIsOpenSign}>
+      <Dialog open={isOpenLogin} onOpenChange={setIsOpenLogin}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle className="border-b pb-3">
@@ -172,18 +155,25 @@ const ModalLogin = () => {
                 </p>
 
                 <div className="flex-center-col gap-3">
-                  <div>
-                    <Image
-                      src="/dizzy.png"
-                      width={80}
-                      height={80}
-                      alt="dizzy"
-                    />
-                  </div>
                   {data && data?.length > 0 && (
-                    <div className="border border-gray-300 p-4 rounded-xl my-4 flex justify-between items-center">
-                      <div>
-                        <span>{data[0].handle?.fullHandle}</span>
+                    <div className="border border-gray-300 p-4 rounded-xl my-4 flex items-center w-full justify-between">
+                      <div className="flex items-center">
+                        <Image
+                          src={
+                            (data?.[0]?.metadata?.picture as any)?.optimized
+                              ?.uri ?? ""
+                          }
+                          width={60}
+                          height={60}
+                          className="rounded-full"
+                          alt="avatar"
+                        />
+                        <div className="flex flex-col pl-3 gap-1">
+                          <span>{data[0].handle?.fullHandle}</span>
+                          <span>
+                            {data[0].handle?.suggestedFormatted.localName}
+                          </span>
+                        </div>
                       </div>
 
                       <button className="border rounded-full shadow px-4 py-1.5">
@@ -191,20 +181,6 @@ const ModalLogin = () => {
                       </button>
                     </div>
                   )}
-
-                  <p>Get your Hey profile now!</p>
-                  <div>
-                    <Button
-                      disabled={loading}
-                      onClick={() => {
-                        setIsOpenSignUp(true);
-                        setIsOpenLogin(false);
-                      }}
-                      className="rounded-full"
-                    >
-                      Signup now
-                    </Button>
-                  </div>
                 </div>
 
                 <div className="flex items-center gap-1">
