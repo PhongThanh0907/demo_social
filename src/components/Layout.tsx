@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "./Header";
 import { useAccount } from "wagmi";
 import SubHeader from "./SubHeader";
+import ModalLogin from "./ModalLogin";
 
 const Layout = () => {
   const { address } = useAccount();
@@ -87,6 +88,7 @@ const Layout = () => {
     <>
       <Header />
       {!address && <SubHeader />}
+      {address && <ModalLogin />}
       <div className={`bg-gray-50 ${address && "pt-[88px]"}`}>
         <div className="grid grid-cols-12 gap-6 width-screen">
           <div className="col-span-7 flex flex-col gap-6">
