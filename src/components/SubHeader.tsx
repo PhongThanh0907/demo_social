@@ -9,8 +9,7 @@ const SubHeader = () => {
         <div className="space-y-6">
           <p className="text-3xl">Welcome to MOREPad Dev Forum!</p>
           <p className="text-3xl">
-            Share your questions and insights
-            <br /> about building with MOREPad.
+            Share your questions and insights about building with MOREPad.
           </p>
         </div>
       </div>
