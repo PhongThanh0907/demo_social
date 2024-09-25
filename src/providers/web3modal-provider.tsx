@@ -6,7 +6,7 @@ import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 import { WagmiProvider } from "wagmi";
 import { linea, polygon } from "wagmi/chains";
 
-import { linea as LineaChain } from "viem/chains";
+import { polygon as PolygonChain } from "viem/chains";
 
 const projectId = "f534414fcc61c0b1dd52591d244181f0";
 
@@ -30,7 +30,7 @@ const config = defaultWagmiConfig({
 
 // 3. Create modal
 createWeb3Modal({
-  defaultChain: LineaChain,
+  defaultChain: PolygonChain,
   wagmiConfig: config,
   projectId,
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
