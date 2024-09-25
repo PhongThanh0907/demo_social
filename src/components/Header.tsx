@@ -5,7 +5,6 @@ import { useAccount } from "wagmi";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { disconnect } from "@wagmi/core";
 import { wagmiConfig } from "@/providers/wagmiConfig";
-import { LoginWallet } from "./LoginWallet";
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -31,7 +30,6 @@ const Header = () => {
           <Bell className="text-black h-6 w-6" />
           {address && (
             <>
-              <LoginWallet wallet={address} />
               <Image
                 className="rounded-full shadow-lg"
                 src="/logo.jpg"
