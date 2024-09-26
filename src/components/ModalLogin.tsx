@@ -17,27 +17,28 @@ import {
   useProfilesManaged,
   useResolveAddress,
 } from "@lens-protocol/react-web";
+import useStore from "@/stores/useStore";
 
 const ModalLogin = () => {
   const { address } = useAccount();
-  const [isOpenLogin, setIsOpenLogin] = useState(false);
+  // const [isOpenLogin, setIsOpenLogin] = useState(false);
   const [isOpenSignUp, setIsOpenSignUp] = useState(false);
   const [isOpenSign, setIsOpenSign] = useState(false);
   const { loading } = useResolveAddress();
+  const { isOpenLogin, setIsOpenLogin, setAvatar } = useStore();
   const { data } = useProfilesManaged({
     for: address as string,
     includeOwned: true,
   });
 
-  console.log(data);
-
   useEffect(() => {
     if (address && data?.length === 0) {
       setIsOpenSignUp(true);
     } else if (address && data && data?.length > 0) {
+      setAvatar((data?.[0]?.metadata?.picture as any)?.optimized?.uri ?? "");
       setIsOpenLogin(true);
     }
-  }, [address, data]);
+  }, [address, data, setIsOpenSignUp, setIsOpenLogin, setAvatar]);
 
   return (
     <>

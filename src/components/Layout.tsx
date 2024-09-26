@@ -7,9 +7,11 @@ import Header from "./Header";
 import { useAccount } from "wagmi";
 import SubHeader from "./SubHeader";
 import ModalLogin from "./ModalLogin";
+import useStore from "@/stores/useStore";
 
 const Layout = () => {
   const { address } = useAccount();
+  const { avatar } = useStore();
 
   const data1 = [
     {
@@ -84,6 +86,7 @@ const Layout = () => {
       img: "/img25.jpg",
     },
   ];
+
   return (
     <>
       <Header />
@@ -99,7 +102,7 @@ const Layout = () => {
                 <>
                   <Image
                     className="rounded-full shadow-lg"
-                    src="/logo.jpg"
+                    src={avatar}
                     width={50}
                     height={50}
                     alt="logo"

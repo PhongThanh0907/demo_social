@@ -5,9 +5,12 @@ import { useAccount } from "wagmi";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 import { disconnect } from "@wagmi/core";
 import { wagmiConfig } from "@/providers/wagmiConfig";
+import useStore from "@/stores/useStore";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const Header = () => {
   const { open } = useWeb3Modal();
+  const { avatar } = useStore();
 
   const { address } = useAccount();
 
@@ -30,13 +33,25 @@ const Header = () => {
           <Bell className="text-black h-6 w-6" />
           {address && (
             <>
-              <Image
-                className="rounded-full shadow-lg"
-                src="/logo.jpg"
-                width={32}
-                height={32}
-                alt="logo"
-              />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Image
+                    className="rounded-full shadow-lg"
+                    src={avatar}
+                    width={32}
+                    height={32}
+                    alt="logo"
+                  />
+                </PopoverTrigger>
+                <PopoverContent className="w-32">
+                  <span
+                    onClick={() => disconnect(wagmiConfig)}
+                    className="cursor-pointer"
+                  >
+                    Disconnect
+                  </span>
+                </PopoverContent>
+              </Popover>
             </>
           )}
 
@@ -49,15 +64,15 @@ const Header = () => {
               {/* <ChevronRight className="h-4 w-4" /> */}
             </button>
           )}
-          {address && (
+          {/* {address && (
             <button
               onClick={() => disconnect(wagmiConfig)}
               className="bg-[#00cfff] text-white px-4 py-2 rounded-xl"
             >
               Disconnect
-              {/* <ChevronRight className="h-4 w-4" /> */}
+              <ChevronRight className="h-4 w-4" />
             </button>
-          )}
+          )} */}
         </div>
       </div>
     </header>
