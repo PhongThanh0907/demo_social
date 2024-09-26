@@ -122,13 +122,16 @@ const Layout = () => {
                     className={`border border-gray-100 shadow rounded-lg bg-white w-full h-20 flex items-center p-4 gap-2"`}
                   >
                     <>
-                      <Image
-                        className="rounded-full shadow-lg"
-                        src={avatar}
-                        width={50}
-                        height={50}
-                        alt="logo"
-                      />
+                      {avatar.trim() && (
+                        <Image
+                          className="rounded-full shadow-lg"
+                          src={avatar}
+                          width={50}
+                          height={50}
+                          alt="logo"
+                        />
+                      )}
+
                       <FormField
                         control={form.control}
                         name="content"
@@ -137,7 +140,7 @@ const Layout = () => {
                             <FormControl>
                               <input
                                 type="text"
-                                className="focus:outline-none border-none pl-3"
+                                className="focus:outline-none border-none pl-3 flex-1 w-[620px]"
                                 placeholder="What's news"
                                 {...field}
                               />

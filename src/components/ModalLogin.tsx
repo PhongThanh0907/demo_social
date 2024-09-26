@@ -156,8 +156,8 @@ const ModalLogin = () => {
               <div>
                 <p className="py-2 text-lg">Please sign the message.</p>
                 <p>
-                  Hey users this signature to verify that you&apos;re the owner
-                  of this address
+                  Users can use this signature to confirm that you&apos;re the
+                  owner of this address.
                 </p>
 
                 <div className="flex-center-col gap-3">
