@@ -25,7 +25,7 @@ const ModalLogin = () => {
   const [isOpenSignUp, setIsOpenSignUp] = useState(false);
   const [isOpenSign, setIsOpenSign] = useState(false);
   const { loading } = useResolveAddress();
-  const { isOpenLogin, setIsOpenLogin, setAvatar } = useStore();
+  const { isOpenLogin, setIsOpenLogin, setAvatar, setProfile } = useStore();
   const { data } = useProfilesManaged({
     for: address as string,
     includeOwned: true,
@@ -36,9 +36,14 @@ const ModalLogin = () => {
       setIsOpenSignUp(true);
     } else if (address && data && data?.length > 0) {
       setAvatar((data?.[0]?.metadata?.picture as any)?.optimized?.uri ?? "");
+      setProfile({
+        name: data[0].handle?.fullHandle ?? "",
+        avatar: (data?.[0]?.metadata?.picture as any)?.optimized?.uri ?? "",
+        localName: data[0].handle?.suggestedFormatted.localName ?? "",
+      });
       setIsOpenLogin(true);
     }
-  }, [address, data, setIsOpenSignUp, setIsOpenLogin, setAvatar]);
+  }, [address, data, setIsOpenSignUp, setIsOpenLogin, setAvatar, setProfile]);
 
   return (
     <>

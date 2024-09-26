@@ -5,6 +5,17 @@ interface StoreState {
   setIsOpenLogin: (state: boolean) => void;
   avatar: string;
   setAvatar: (avatar: string) => void;
+  profile: {
+    name: string;
+    avatar: string;
+    localName: string;
+  };
+  setProfile: (profile: {
+    name: string;
+    avatar: string;
+    localName: string;
+  }) => void;
+
 }
 
 const useStore = create<StoreState>((set) => ({
@@ -12,6 +23,16 @@ const useStore = create<StoreState>((set) => ({
   setIsOpenLogin: (state: boolean) => set(() => ({ isOpenLogin: state })),
   avatar: "",
   setAvatar: (avatar: string) => set(() => ({ avatar: avatar })),
+  profile: {
+    name: "",
+    avatar: "",
+    localName: "",
+  },
+  setProfile: (profile: {
+    name: string;
+    avatar: string;
+    localName: string;
+  }) => set(() => ({ profile: profile })),
 }));
 
 export default useStore;
